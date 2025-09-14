@@ -51,22 +51,14 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 ### Learning Dynamics
 - **Rapid initial improvement**: CER dropped from 46.7% to 12.1% in first epoch
 - **Consistent progress**: Steady improvement through epoch 14
-- **Early stopping**: Triggered after 6 epochs without validation improvement
+- **Early stopping**: Triggered after 6 epochs without validation loss reduction
 - **Learning rate scheduling**: CosineAnnealingWarmRestarts with T_0=5, T_mult=2
 
 ### Model Convergence
 - **Best validation loss**: 0.1913 at epoch 14
 - **Training time per epoch**: ~6-10 minutes (decreasing over time)
-- **Overfitting signs**: Some divergence between train/val metrics in later epochs
+- **Overfitting signs**: Small divergence between train/val metrics in later epochs 
 - **Generalization**: Strong test performance (95.4% char accuracy) indicates good generalization
-
-### Sample Predictions Evolution
-**Example progression for "It was a splendid interpretation of the":**
-- Epoch 1: "It was a splendid interpretatio of that" (missing 'n', wrong ending)
-- Epoch 2+: "It was a splendid interpretation of that" (consistent slight error: 'the' → 'that')
-
-This shows the model learned the core handwriting patterns quickly but struggled with certain word boundaries.
-
 
 ## Architecture Details
 - **Input**: 128×1028 grayscale images
