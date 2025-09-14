@@ -7,7 +7,7 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 - CTC loss for variable-length sequence alignment
 - Beam search decoding with KenLM language model integration
 
-## Final Performance Metrics
+## Final Performance Metrics (example run)
 - **Character Error Rate (CER)**: 4.6% 
 - **Word Error Rate (WER)**: 14.1%
 - **Normalized Edit Distance**: 0.046
@@ -21,7 +21,7 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 - **Architecture**: CRNN with spatial attention, 512 hidden units, 2 LSTM layers
 - **Preprocessing**: Adaptive Gaussian thresholding, contrast enhancement, augmentation
 
-## Training Progress
+## Training Progress (example run)
 
 | Epoch | Train Loss | Val Loss | Train Char Acc | Val Char Acc | Train Word Acc | Val Word Acc |
 |-------|------------|----------|----------------|--------------|----------------|--------------|
