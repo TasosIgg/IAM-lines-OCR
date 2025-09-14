@@ -86,3 +86,6 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 1. Install dependencies: `pip install datasets editdistance albumentations pyctcdecode kenlm`
 2. Open the notebook in Kaggle/Colab or run locally
 3. The notebook handles dataset loading, preprocessing, training, and evaluation automatically
+
+## Link to the Kaggle Notebook
+[Kaggle Notebook](https://www.kaggle.com/code/tasosigg/iam-ocr-notebook)
