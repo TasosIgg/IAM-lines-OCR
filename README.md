@@ -7,9 +7,9 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 - CTC loss for variable-length sequence alignment
 - Beam search decoding with KenLM language model integration
 
-## Final Performance Metrics on Test Set
+## Final Performance Metrics
 - **Character Error Rate (CER)**: 4.6% 
-- **Word Error Rate (WER)**: 14.1% 
+- **Word Error Rate (WER)**: 14.1%
 - **Normalized Edit Distance**: 0.046
 - **Average Edit Distance per Sample**: 1.93 characters
 
@@ -51,13 +51,13 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 ### Learning Dynamics
 - **Rapid initial improvement**: CER dropped from 46.7% to 12.1% in first epoch
 - **Consistent progress**: Steady improvement through epoch 14
-- **Early stopping**: Triggered after 6 epochs without validation loss reduction
+- **Early stopping**: Triggered after 6 epochs without validation improvement
 - **Learning rate scheduling**: CosineAnnealingWarmRestarts with T_0=5, T_mult=2
 
 ### Model Convergence
-- **Best validation loss**: 0.1913 at epoch 14
+- **Best validation loss**: 0.1913 at epoch 14 (ctc loss)
 - **Training time per epoch**: ~6-10 minutes (decreasing over time)
-- **Overfitting signs**: Small divergence between train/val metrics in later epochs 
+- **Overfitting signs**: Small divergence between train/val metrics in later epochs
 - **Generalization**: Strong test performance (95.4% char accuracy) indicates good generalization
 
 ## Architecture Details
@@ -73,3 +73,16 @@ CRNN-based handwritten text recognition system trained on the IAM Lines dataset,
 - **Validation samples**: 966 (after filtering)  
 - **Test samples**: 2,915 (after filtering)
 - **Vocabulary size**: 79 characters + blank token
+- 
+## Technical Implementation Highlights
+- **Custom preprocessing pipeline** with multiple binarization options
+- **Data augmentation** using Albumentations for training robustness
+- **Spatial attention mechanism** to focus on relevant image regions
+- **KenLM integration** for linguistically-informed beam search decoding
+- **Comprehensive evaluation** with multiple metrics (CER, WER, edit distance)
+
+
+## How to Run
+1. Install dependencies: `pip install datasets editdistance albumentations pyctcdecode kenlm`
+2. Open the notebook in Kaggle/Colab or run locally
+3. The notebook handles dataset loading, preprocessing, training, and evaluation automatically
