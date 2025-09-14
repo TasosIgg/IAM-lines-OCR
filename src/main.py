@@ -1,3 +1,16 @@
+!pip install datasets editdistance albumentations
+!pip install pyctcdecode
+!pip install kenlm
+
+# INSTALLMENTS IF RUNNING ON KAGGLE
+
+import warnings
+warnings.filterwarnings('ignore')
+import sys
+sys.path.insert(0, "/kaggle/input/modules")  
+
+# FILEPATH FOR MODULES
+
 from datasets import load_dataset, concatenate_datasets
 from config import *
 from analysis import setup_environment, show_random_samples, analyze_dataset
